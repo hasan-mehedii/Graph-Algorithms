@@ -17,7 +17,7 @@ public class BFS {
 
     public static void bfs(ArrayList<Edge> graph[], int V, boolean vis[], int start) {
         Queue<Integer> q = new LinkedList<>();
-        q.add(0);
+        q.add(start);
 
         while (!q.isEmpty()){
             int curr = q.remove();
@@ -68,3 +68,13 @@ public class BFS {
         graph[3].add(new Edge(3, 2));
     }
 }
+
+/*Output Graph (After BFS):
+
+     0
+    / \
+   2   1
+  / \   \
+ 1   3   3
+
+*/
