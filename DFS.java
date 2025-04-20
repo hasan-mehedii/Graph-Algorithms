@@ -32,7 +32,7 @@ public class DFS {
     }
 
     public static void dfs(ArrayList<Edge> graph[], int curr, boolean vis[]) {
-        System.out.print(curr+" ");
+        System.out.print(curr +" ");
         vis[curr] = true;
 
         for (int i=0; i<graph[curr].size(); i++) {
@@ -50,14 +50,22 @@ public class DFS {
         ArrayList<Edge> graph[] = new ArrayList[V];
         createGraph(graph);
 
+        System.out.print("BFS: ");
         boolean vis[] = new boolean[V];
-        // for (int i = 0; i<V; i++) {
-        //     if(vis[i] == false){
-        //         bfs(graph, V, vis, i);
-        //     }
-        // }
-
-        dfs(graph, 0, vis);
+        for (int i = 0; i<V; i++) {
+            if(vis[i] == false){
+                bfs(graph, V, vis, i);
+            }
+        }
+        System.out.println();
+        
+        System.out.print("DFS: ");
+        vis = new boolean[V];
+        for (int i = 0; i<V; i++) {
+            if(vis[i] == false){
+                dfs(graph, i, vis);
+            }
+        }
         System.out.println();
     }
 
