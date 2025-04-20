@@ -12,7 +12,7 @@ Go to [this repository](https://github.com/hasan-mehedii/Graph-Algorithms) and c
 ### 2. Clone Your Fork
 Open a terminal and run:
 ```bash
-git clone https://github.com/hasan-mehedii/Graph-Algorithms.git
+git clone "https://github.com/hasan-mehedii/Graph-Algorithms.git"
 cd Graph-Algorithms 
 ```
 
