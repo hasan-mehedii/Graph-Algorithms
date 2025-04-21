@@ -48,6 +48,16 @@ public class CycleDetecttion {
         ArrayList<Edge> graph[] = new ArrayList[V];
         createGraph(graph);
 
-        System.out.println(isCycle(graph, new boolean[V], 0, new boolean[V]));
+        boolean vis[] = new boolean[V];
+        boolean rec[] = new boolean[V];
+        for (int i=0; i<V; i++) {
+            if (!vis[i]) {
+                boolean is_cycle = isCycle(graph, vis, 0, rec);
+                if (is_cycle) {
+                    System.out.println(is_cycle);
+                    break;
+                }
+            }
+        }
     }
 }
