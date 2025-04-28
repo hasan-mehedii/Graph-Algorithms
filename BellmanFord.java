@@ -28,6 +28,7 @@ public class BellmanFord {
         graph[3].add(new Edge(3, 4, 4));
 
         graph[4].add(new Edge(4, 1, -1));
+        // graph[4].add(new Edge(4, 1, -1));
     }
 
     public static void bellman_ford(ArrayList<Edge> graph[], int src, int V) {
@@ -48,6 +49,19 @@ public class BellmanFord {
                     if (dist[u] != Integer.MAX_VALUE && dist[u] + e.weight < dist[v]) {
                         dist[v] = dist[u] + e.weight;
                     }
+                }
+            }
+        }
+
+        // To detect negative weight cycle
+        for (int i=0; i<V; i++) {
+            for (int j=0; j<graph[i].size(); j++) {
+                Edge e = graph[i].get(j);
+                int u = e.src;
+                int v = e.dest;
+
+                if (dist[u] != Integer.MAX_VALUE && dist[u] + e.weight < dist[v]) {
+                    System.out.println("negative weight cycle exists");
                 }
             }
         }
