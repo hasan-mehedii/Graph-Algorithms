@@ -1,4 +1,4 @@
-// Reverse DFS = Kosaraju's Algorithm
+// Reverse DFS = Kosaraju's Algorithm (To find Strongly Connected Components)
 // Steps:
 //     1. Get nodes in stack (topological sort)
 //     2. Transpose the graph
