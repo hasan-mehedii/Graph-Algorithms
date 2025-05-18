@@ -15,9 +15,9 @@ public class FloydWarshall {
         }
 
         // Step 2: Floyd-Warshall Algorithm
-        for (int k = 0; k < V; k++) {
-            for (int i = 0; i < V; i++) {
-                for (int j = 0; j < V; j++) {
+        for (int k = 0; k < V; k++) { // intermediate vertex
+            for (int i = 0; i < V; i++) { // source vertex
+                for (int j = 0; j < V; j++) { // destination vertex
                     if (dist[i][k] != Integer.MAX_VALUE && dist[k][j] != Integer.MAX_VALUE) {
                         dist[i][j] = Math.min(dist[i][j], dist[i][k] + dist[k][j]);
                     }
